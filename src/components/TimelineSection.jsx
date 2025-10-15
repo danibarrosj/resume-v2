@@ -1,5 +1,5 @@
-import { GraduationCap, Briefcase, Award, Code2, Network, Monitor, ShieldHalf, ShieldAlert, Package, Calculator, Flag, Medal } from "lucide-react";
-
+import { Reveal } from "../components/Reveal.jsx";
+import { GraduationCap, Briefcase, Award, Code2, Network, Monitor, ShieldAlert, Package, Calculator, Flag, Medal } from "lucide-react";
 const TIMELINE = [
     {
     date: "Exp. Dec 2025",
@@ -107,23 +107,17 @@ desc: `• Monitored and triaged tickets via the university’s network manageme
 export const TimelineSection = () => {
   return (
     <section id="timeline" className="relative py-24 px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        Timeline
-      </h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Timeline</h2>
 
       <div className="relative mx-auto max-w-5xl">
-        {/* Center vertical line */}
         <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-border" />
-
         <ol className="space-y-12">
           {TIMELINE.map((item, idx) => {
             const isLeft = idx % 2 === 0;
             return (
               <li key={idx} className="relative grid md:grid-cols-2">
-                {/* Spacer for alternating layout */}
                 <div className={isLeft ? "" : "hidden md:block"} />
 
-                {/* Dot & icon in the center line */}
                 <div
                   className="absolute left-1/2 -translate-x-1/2 -top-2 h-4 w-4 rounded-full bg-primary shadow ring-4 ring-background"
                   aria-hidden="true"
@@ -132,35 +126,26 @@ export const TimelineSection = () => {
                   {item.icon}
                 </div>
 
-                {/* Card */}
-                <div
-                  className={`mt-8 md:mt-0 ${
-                    isLeft ? "md:pr-10 md:col-start-1" : "md:pl-10 md:col-start-2"
-                  }`}
-                >
-                  <article className="bg-card border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="text-xs uppercase tracking-wide text-foreground/60">
-                      {item.date}
-                    </div>
-                    <h3 className="text-lg font-semibold mt-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-foreground/80">{item.org}</p>
-                    <p className="text-sm text-muted-foreground mt-3 whitespace-pre-line leading-relaxed">
-                      {item.desc}
-                    </p>
-                    {item.linkHref && (
-                      <a
-                        href={item.linkHref}
-                        className="inline-block mt-3 text-primary hover:underline text-sm"
-                      >
-                        {item.linkText ?? "Learn more"}
-                      </a>
-                    )}
-                  </article>
+                <div className={`mt-8 md:mt-0 ${isLeft ? "md:pr-10 md:col-start-1" : "md:pl-10 md:col-start-2"}`}>
+                  <Reveal>
+                    <article className="bg-card border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="text-xs uppercase tracking-wide text-foreground/60">
+                        {item.date}
+                      </div>
+                      <h3 className="text-lg font-semibold mt-1">{item.title}</h3>
+                      <p className="text-sm text-foreground/80">{item.org}</p>
+                      <p className="text-sm text-muted-foreground mt-3 whitespace-pre-line leading-relaxed">
+                        {item.desc}
+                      </p>
+                      {item.linkHref && (
+                        <a href={item.linkHref} className="inline-block mt-3 text-primary hover:underline text-sm">
+                          {item.linkText ?? "Learn more"}
+                        </a>
+                      )}
+                    </article>
+                  </Reveal>
                 </div>
 
-                {/* Mirror spacer for alternating layout */}
                 <div className={!isLeft ? "" : "hidden md:block"} />
               </li>
             );
@@ -169,4 +154,4 @@ export const TimelineSection = () => {
       </div>
     </section>
   );
-}
+};
