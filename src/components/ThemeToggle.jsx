@@ -1,20 +1,22 @@
-// ThemeToggle.jsx
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true); // default dark mode
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-      setIsDarkMode(true);
+    const prefersDark = storedTheme === "dark" || (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    if (prefersDark) {
       document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
+      localStorage.setItem("theme", "dark");
     } else {
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
       document.documentElement.classList.remove("dark");
+      setIsDarkMode(false);
+      localStorage.setItem("theme", "light");
     }
   }, []);
 
@@ -29,7 +31,6 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        // INLINE on mobile; only fixed on md+
         "p-2 rounded-full transition-colors duration-300",
         "hover:bg-secondary/50 focus:outline-none",
         "md:fixed md:top-5 md:right-5 md:z-50"
@@ -37,9 +38,9 @@ export const ThemeToggle = () => {
       aria-label="Toggle theme"
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6" />
+        <Sun className="h-6 w-6 text-yellow-300" />
       ) : (
-        <Moon className="h-6 w-6" />
+        <Moon className="h-6 w-6 text-blue-900" />
       )}
     </button>
   );
