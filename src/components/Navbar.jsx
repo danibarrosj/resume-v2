@@ -63,7 +63,7 @@ export const Navbar = () => {
           <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen((p) => !p)}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground ml-4"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
