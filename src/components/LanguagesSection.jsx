@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const languages = [
-  { name: "English", level: 95, category: "Human" },
+  { name: "English", level: 100, category: "Human" },
   { name: "Spanish", level: 100, category: "Human" },
   { name: "Japanese", level: 65, category: "Human" },
 ];
