@@ -154,6 +154,11 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+@utility text-multiline {
+  white-space: pre-line;
+  line-height: 1;
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;

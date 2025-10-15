@@ -3,32 +3,28 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Active Directory & DNS Homelab (Raspberry Pi)",
+    description: `• Deployed and configured a Samba Active Directory Domain Controller on a Raspberry Pi running Debian\n• Configured DNS services to support domain name resolution via Samba internal DNS\n• Verified AD functionality using nslookup, host, and netstat to confirm SRV, A, and LDAP record responses\n• Created a custom domain (homelab.local) and configured static IP networking`,
+    image: "/projects/raspbian-logo.png",
+    tags: ["RaspberryPI/Debian", "Samba AD", "DNS"],
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "URL Shortener Web App",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "• Built a web application that converts long URLs into short, unique links using Flask \n\n • Implemented routing to handle redirections, form validation, and a simple mapping system to store and retrieve original URLs",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["Python", "Flask", "HTML/CSS", "API"],
+
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "ProjectWise Hub",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
+      "The ProjectWise Hub is a full-stack web application that enables: \n\n• Students: to submit projects, track progress, manage their academic profile \n\n • Faculty: to review submissions, provide grades and feedback \n\n • Administrators: to manage users, courses, and system settings",
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["React", "Node.js", "Typescript", "PostgreSQL"],
+
   },
 ];
 
@@ -42,8 +38,9 @@ export const ProjectsSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          Here are some of my recent projects. Some projects were created in a homelab environment to gain experience,
+          while others were developed as part of my coursework, and lastly, some are personal projects to further enhance
+          my skills.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -70,12 +67,13 @@ export const ProjectsSection = () => {
                 </div>
 
                 <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4 whitespace-pre-line">
                   {project.description}
                 </p>
+
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
-                    <a
+                    {/* <a
                       href={project.demoUrl}
                       target="_blank"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
@@ -88,7 +86,7 @@ export const ProjectsSection = () => {
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
                       <Github size={20} />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
@@ -100,7 +98,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/danibarrosj"
           >
             Check My Github <ArrowRight size={16} />
           </a>
