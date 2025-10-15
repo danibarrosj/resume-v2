@@ -60,7 +60,7 @@ export const Navbar = () => {
 
         {/* Theme toggle + mobile menu button */}
         <div className="flex items-center gap-2">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen((p) => !p)}
             className="md:hidden p-2 text-foreground ml-6"
