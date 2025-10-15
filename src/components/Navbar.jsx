@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -14,8 +15,19 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // ✅ Default to dark mode
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10); // <-- scrollY (not screenY)
+    const stored = localStorage.getItem("theme");
+    if (!stored) {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.toggle("dark", stored === "dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,20 +39,14 @@ export const Navbar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
-        {/* Brand with light/dark logos */}
-        <a href="#hero" className="flex items-center gap-2">
-          {/* Light logo by default */}
-          <img src="/logo-light.svg" alt="CyberCloudVet" className="h-8 w-auto dark:hidden" />
-          {/* Dark logo when html has .dark */}
-          <img src="/logo-dark.svg" alt="CyberCloudVet" className="h-8 w-auto hidden dark:block" />
-          <span className="text-xl font-bold text-primary ml-2">
-            <span className="text-glow text-foreground">Daniel's</span> Place
-          </span>
+      <div className="container flex items-center justify-between gap-3">
+        {/* ✅ Title only — no logo */}
+        <a href="#hero" className="text-xl font-bold text-primary whitespace-nowrap">
+          <span className="text-glow text-foreground">Daniel's</span> Place
         </a>
 
-        {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -52,16 +58,19 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* mobile toggle */}
-        <button
-          onClick={() => setIsMenuOpen((p) => !p)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Theme toggle + mobile menu button */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsMenuOpen((p) => !p)}
+            className="md:hidden p-2 text-foreground"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
-        {/* mobile menu */}
+        {/* Mobile full-screen menu */}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
