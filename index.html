@@ -12,7 +12,14 @@
     <meta property="og:description" content="IT support, networking & cybersecurity projects." />
     <meta property="og:image" content="/og-card.png" />
     <meta property="og:type" content="website" />
-
+    <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = stored ? stored === 'dark' : systemDark;
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
     <!-- Favicon -->
     <link rel="icon" href="/favicon.png" />
     <!-- or SVG: <link rel="icon" href="/favicon.svg" type="image/svg+xml" /> -->
