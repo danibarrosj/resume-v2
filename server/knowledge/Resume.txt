@@ -1,0 +1,52 @@
+DANIEL J. BARROS
+(203) 526-9394 — Secret Clearance — daniel@cybercloudvet.com- LinkedIn - Website
+PROFESSIONAL EXPERIENCE
+NETWORK TECHNICIAN September 2025 - Present
+Sacred Heart University Fairfield, CT
+ Monitored and triaged tickets via the university’s network management system, performing root cause analysis
+and tracking issue resolution across VLANs, switches, and access points.
+ Executed L1 troubleshooting of Ethernet and wireless connectivity, DNS resolution, and DHCP lease issues
+before escalating to network engineering team.
+ Configured and tested network hardware (routers, managed switches, patch panels), maintained IDF/MDF closet
+standards, and documented topology changes using CISCO DNAC and internal knowledge base.
+IT SERVICE DESK & SUPPORT TECHNICIAN March 2025 - Present
+Sacred Heart University Fairfield, CT
+ Provided front-line and advanced technical support for students, faculty, and staff through in-person assistance,
+phone, remote access, and live chat, resolving hardware, software, network, and AV-related issues.
+ Actively participated in resolving over 1000+ technical support tickets, delivering timely, accurate, and effective
+solutions across a diverse range of hardware, software, network, and user-related issues.
+ Led on-site classroom support by responding to urgent calls (BAT phone), troubleshooting equipment, and
+ensuring minimal downtime during instruction.
+ Assisted with the imaging, configuration, and deployment of university-issued laptops and desktops, as well as
+account management tasks like password resets and account activations.
+ Supported malware and virus diagnostics, coordinated with IT Security when needed for account discrepancies.
+OPERATIONS CLERK / HELP DESK February 2022 - October 2023
+United States Marine Corps Okinawa, Japan
+ Managed the maintenance, logistics, and security of $10,000,000 war simulation equipment, ensuring operational
+readiness and availability for training exercises and simulations.
+ Served as the first point of contact for technical assistance regarding operational systems and hardware, providing
+timely and efficient resolutions.
+ Managed accountability for over 200 Marines during operations, ensuring accurate tracking of personnel
+movements, assignments, status updates, and personnel records, including attendance, duty assignments, training,
+and qualifications, using computerized systems and manual logs to track individual and unit readiness.
+HOMELAB (Lab Toys)
+ Deployed and configured a Samba Active Directory Domain Controller on a Raspberry Pi running Debian.
+ Configured DNS services to support domain name resolution via Samba internal DNS.
+ Verified AD functionality using nslookup, host, and netstat to confirm SRV, A, and LDAP record responses.
+ Created a custom domain (homelab.local) and configured static IP networking.
+EDUCATION
+ M.S. of Science in Computer Science & Information Technology Exp. December 2025
+ Master of Business Administration (Management & HR) GPA 3.86
+Sacred Heart University, Fairfield, CT
+ B.A of Arts in Business Administration GPA 3.65
+University of Maryland Global Campus Japan, Armed Forces Pacific
+CERTIFICATIONS, SKILLS & AWARDS
+Skills: Network troubleshooting (TCP/IP, DNS, DHCP, VPN, firewalls), log analysis, incident response, Active
+Directory, password resets, imaging and deployment, hardware/software setup, ticketing systems, Microsoft Office Suite.
+Tools: SIEM, EDR, SOAR, IDS/IPS, Tcpdump, Nmap, Wireshark, Raspberry Pi, Virtualization.
+Programming/Scripting Languages: Python, Java, SQL, PowerShell, Bash, C++.
+Awards: Dean’s List (X2), Upsilon Pi Epsilon Honor Society, and over 20 military service-related medals, letters of
+appreciation, and awards.
+Certifications: Network+, Security+, CySA+, Security Analytics Professional (CSAP), CCNA (In Progress) EN
+ES
+Full Resume (LINK) JP

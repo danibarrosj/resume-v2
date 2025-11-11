@@ -10,6 +10,7 @@ import { LanguagesSection } from "../components/LanguagesSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { CertificationsSection } from "../components/CertificationsSection";
+import { AIAssistant } from "../components/AIAssistant";
 
 export const Home = () => {
   return (
@@ -29,6 +30,7 @@ export const Home = () => {
         <LanguagesSection />
         <CertificationsSection />
         <ContactSection />
+        <AIAssistant />
       </main>
 
       {/* Footer */}
